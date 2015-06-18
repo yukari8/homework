@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shopping</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <ul>
+    <li><%= link_to 'カート表示', carts_path %></li>
+    <li><%= link_to 'カートに追加', new_cart_path %></li>
+  </ul>
+
+<%= yield %>
+
+</body>
+</html>

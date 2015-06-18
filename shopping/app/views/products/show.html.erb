@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1>メニュー情報</h1>
+
+<p>
+  <strong><%= @product.name %></strong>
+</p>
+
+<p>
+  <%= image_tag '<%= product_id =>.jpg' %>
+</p>
+
+<p>
+  <%= @product.price %>円
+</p>
+
+<p>
+  <%= @product.detail %>
+</p>
+
+<%= link_to '編集', edit_product_path(@product) %> |
+<%= link_to '戻る', products_path %>
