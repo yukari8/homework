@@ -1,22 +1,15 @@
-<p id="notice"><%= notice %></p>
-
-<h1>メニュー情報</h1>
-
-<p>
-  <strong><%= @product.name %></strong>
-</p>
-
-<p>
-  <%= image_tag '<%= product_id =>.jpg' %>
-</p>
-
-<p>
-  <%= @product.price %>円
-</p>
-
-<p>
-  <%= @product.detail %>
-</p>
-
-<%= link_to '編集', edit_product_path(@product) %> |
-<%= link_to '戻る', products_path %>
+<div class="wrap">
+  <div class="container">
+    <p id="notice"><%= notice %></p>
+    <div class="row">
+      <div class="col-xs-6 col-sm-6"><%= image_tag @product.img %></div>
+      <div class="col-xs-6 col-sm-6">
+        <h1><%= @product.name %></h1>
+        <h2><%= @product.price %>円</h2>
+        <p><%= @product.detail %></p>
+        <div class="btn"><%= link_to 'カートに追加', carts_path(cart: {count: 1, product_id: @product.id}), method: :post %></div>
+      </div>
+    </div>
+    <div class="btn"><%= link_to '戻る', products_path %></div>
+  </div>
+</div>

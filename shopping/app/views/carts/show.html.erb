@@ -1,14 +1,14 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>数量変更</strong>
-  <%= @cart.product %>
-</p>
-
-<p>
-  <strong>数量:</strong>
-  <%= @cart.count %>
-</p>
-
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
-<%= link_to 'Back', carts_path %>
+<div class="wrap">
+  <div class="container">
+    <p id="notice"><%= notice %></p>
+    <p>
+      <strong>数量変更</strong>
+    </p>
+    <p>
+      <strong>数量:</strong>
+      <%= @cart.count %>
+    </p>
+    <div class="btn"><%= link_to '数量変更', edit_cart_path(@cart) %></div>
+    <div class="btn"><%= link_to '戻る', carts_path %></div>
+  </div>
+</div>

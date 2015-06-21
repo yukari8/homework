@@ -17,11 +17,14 @@ class CartsController < ApplicationController
 
   # GET /carts/1/edit
   def edit
+    @product = Product.find(@cart.product_id)
   end
 
   # POST /carts
   def create
     @cart = Cart.new(cart_params)
+    @product = Product.find(@cart.product_id)
+    @cart.product_id = @product.id
 
     if @cart.save
       redirect_to @cart, notice: 'Cart was successfully created.'

@@ -1,29 +1,19 @@
-<p id="notice"><%= notice %></p>
-
-<h1>ショッピングカート</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Product</th>
-      <th>Count</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="wrap">
+  <p id="notice"><%= notice %></p>
+  <div class="container">
+    <h1>ショッピングカート</h1>
     <% @carts.each do |cart| %>
-        <tr>
-          <td><%= cart.product.name %></td>
-          <td><%= cart.count %></td>
-          <td><%= link_to '見る', cart %></td>
-          <td><%= link_to '編集', edit_cart_path(cart) %></td>
-          <td><%= link_to '削除', cart, method: :delete, data: { confirm: '本当にいいの?' } %></td>
-        </tr>
+      <div class="box">
+        <div class="inner row">
+          <div class="col-xs-6 col-sm-6"><%= image_tag cart.product.img %></div>
+          <div class="col-xs-6 col-sm-6">
+            <h2><%= cart.product.name %></h2>
+            <div class="count">数量：<%= cart.count %></div>
+            <div class="btn"><%= link_to '数量変更', edit_cart_path(cart) %></div>
+            <div class="btn"><%= link_to '商品削除', cart, method: :delete, data: { confirm: '本当にいいの?' } %></div>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Cart', new_cart_path %>
+  </div>
+</div>

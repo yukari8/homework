@@ -1,24 +1,18 @@
-<p id="notice"><%= notice %></p>
-
-<h1>期間・季節・数量限定メニュー</h1>
-
-<table>
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= image_tag '1.jpg' %></td>
-
-        <td><%= product.name %></td>
-        <td><%= product.price %>円</td>
-        <td><%= product.detail %></td>
-        <td><%= link_to '見る', product %></td>
-        <td><%= link_to '編集', edit_product_path(product) %></td>
-        <td><%= link_to '削除', product, method: :delete, data: { confirm: '本当にいいの?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'メニューを作成', new_product_path %>
+<div class="wrap">
+  <div id="visual-image"></div>
+  <div class="container">
+    <p id="notice"><%= notice %></p>
+    <h1>NEW</h1>
+    <div class="row">
+      <% @products.each do |product| %>
+        <div class="box col-sm-4">
+          <div class="inner">
+            <div class="image"><%= link_to image_tag(product.img), product %></div>
+            <div class="name"><%= link_to product.name, product %></div>
+            <div class="price"><span><%= product.price %></span>円</div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,10 @@
-<h1>数量変更</h1>
+<div class="wrap">
+  <div class="container">
+    <h1>数量変更</h1>
 
-<%= render 'form' %>
+    <%= render 'form' %>
 
-<%= link_to '見る', @cart %> |
-<%= link_to '戻る', carts_path %>
+    <div class="btn"><%= link_to '見る', @cart %></div>
+    <div class="btn"><%= link_to '戻る', carts_path %></div>
+  </div>
+</div>

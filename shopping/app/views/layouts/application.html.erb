@@ -6,13 +6,24 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-  <ul>
-    <li><%= link_to 'カート表示', carts_path %></li>
-    <li><%= link_to 'カートに追加', new_cart_path %></li>
-  </ul>
+<body id="<%= params[:action] %>" class="<%= params[:controller] %>">
+  <header>
+    <div class="container">
+      <div class="row">
+        <h1 class="col-xs-8 col-sm-8">
+          <%= link_to image_tag("logo.png", :alt => "FASHION ITEMS"), products_path %>
+        </h1>
+        <% if params[:controller] == "products" && params[:action] == "index" %>
+          <ul class="col-xs-4 col-sm-4">
+            <li class="btn"><%= link_to 'カート表示', carts_path %></li>
+            <li class="btn"><%= link_to '商品登録', new_product_path %></li>
+          </ul>
+        <% end %>
+      </div>
+    </div>
+  </header>
 
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>
